@@ -1,0 +1,54 @@
+{
+  "orders": [
+    {
+      "id": "ORD-1001",
+      "customer_id": "CUST-001",
+      "status": "paid",
+      "created_at": "2026-01-10T09:15:00Z",
+      "total_cents": 19000,
+      "items": [
+        { "product_id": "CSH-001", "sku": "CSH-001-S", "qty": 2, "unit_price_cents": 9500 }
+      ]
+    },
+    {
+      "id": "ORD-1002",
+      "customer_id": "CUST-002",
+      "status": "paid",
+      "created_at": "2026-01-12T11:30:00Z",
+      "total_cents": 12000,
+      "items": [
+        { "product_id": "PSH-002", "sku": "PSH-002-M", "qty": 1, "unit_price_cents": 12000 }
+      ]
+    },
+    {
+      "id": "ORD-1003",
+      "customer_id": "CUST-001",
+      "status": "processing",
+      "created_at": "2026-01-15T14:05:00Z",
+      "total_cents": 45999,
+      "items": [
+        { "product_id": "PROD-XYZ", "sku": "PROD-XYZ-1", "qty": 1, "unit_price_cents": 45999 }
+      ]
+    },
+    {
+      "id": "ORD-1004",
+      "customer_id": "CUST-003",
+      "status": "paid",
+      "created_at": "2026-01-18T08:00:00Z",
+      "total_cents": 23998,
+      "items": [
+        { "product_id": "CSH-001", "sku": "CSH-001-M", "qty": 2, "unit_price_cents": 11999 }
+      ]
+    },
+    {
+      "id": "ORD-1005",
+      "customer_id": "CUST-002",
+      "status": "refunded",
+      "created_at": "2026-01-20T10:20:00Z",
+      "total_cents": 0,
+      "items": [
+        { "product_id": "PSH-002", "sku": "PSH-002-M", "qty": 1, "unit_price_cents": 12000 }
+      ]
+    }
+  ]
+}

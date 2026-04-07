@@ -1,0 +1,18 @@
+Checking for new versions...
+
+2026-03-27 13:59:37   --> payment_intent.created [evt_3TFZzEQv3I42dxZU1evzNDL5]
+2026-03-27 13:59:40  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFZzEQv3I42dxZU1evzNDL5]
+2026-03-27 14:00:56   --> payment_intent.succeeded [evt_3TFZzEQv3I42dxZU1Jf5XFgo]
+2026-03-27 14:00:56   --> charge.succeeded [evt_3TFZzEQv3I42dxZU1JY8UFcB]
+2026-03-27 14:00:59   --> charge.updated [evt_3TFZzEQv3I42dxZU1e1DfYSs]
+2026-03-27 14:00:59  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFZzEQv3I42dxZU1JY8UFcB]
+2026-03-27 14:00:59  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFZzEQv3I42dxZU1e1DfYSs]
+2026-03-27 14:01:00  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFZzEQv3I42dxZU1Jf5XFgo]
+2026-03-27 14:07:39   --> payment_intent.created [evt_3TFa71Qv3I42dxZU0VF6nuOh]
+2026-03-27 14:07:43  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFa71Qv3I42dxZU0VF6nuOh]
+2026-03-27 14:07:59   --> payment_intent.succeeded [evt_3TFa71Qv3I42dxZU0Zb9tnw6]
+2026-03-27 14:07:59   --> charge.succeeded [evt_3TFa71Qv3I42dxZU02Pm2gkw]
+2026-03-27 14:08:01  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFa71Qv3I42dxZU02Pm2gkw]
+2026-03-27 14:08:03   --> charge.updated [evt_3TFa71Qv3I42dxZU0McgvO45]
+2026-03-27 14:08:05  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFa71Qv3I42dxZU0McgvO45]
+2026-03-27 14:08:06  <--  [200] POST http://localhost:3000/api/payments/webhook [evt_3TFa71Qv3I42dxZU0Zb9tnw6]

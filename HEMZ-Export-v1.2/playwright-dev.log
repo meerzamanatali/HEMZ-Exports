@@ -1,0 +1,265 @@
+
+> hemz-exports-webapp@0.1.0 dev D:\HEMZ Export Latest\HEMZ-Export-v1.2
+> next dev
+
+   ▲ Next.js 15.2.4
+   - Local:        http://localhost:3002
+   - Network:      http://172.31.255.32:3002
+   - Environments: .env.local, .env
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling /products ...
+ ✓ Compiled /products in 10.4s (1140 modules)
+ GET /products 200 in 11442ms
+ ○ Compiling /api/products ...
+ ✓ Compiled /api/products in 2000ms (1145 modules)
+ GET /api/auth/me 401 in 2278ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+ GET /products 200 in 362ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 3227ms
+ ✓ Compiled in 437ms (522 modules)
+ GET /products 200 in 279ms
+ GET /api/auth/me 401 in 19ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 899ms
+ ○ Compiling /cart ...
+ ✓ Compiled /cart in 622ms (1160 modules)
+ GET /cart 200 in 1010ms
+ GET /api/auth/me 401 in 84ms
+ ○ Compiling /login ...
+ ✓ Compiled /login in 1229ms (1177 modules)
+ GET /login?redirect=%2Fcheckout 200 in 1584ms
+ GET /products 200 in 1573ms
+ GET /api/auth/me 401 in 62ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 980ms
+ ✓ Compiled /admin-login in 472ms (1184 modules)
+ GET /admin-login 200 in 655ms
+ GET /api/auth/me 401 in 54ms
+ ✓ Compiled /api/admin/auth/login in 353ms (1186 modules)
+ POST /api/admin/auth/login 200 in 451ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 1025ms (1241 modules)
+ GET /admin 200 in 1568ms
+ ○ Compiling /admin/products/new ...
+ ✓ Compiled /admin/products/new in 934ms (1256 modules)
+ GET /api/auth/me 401 in 942ms
+ GET /admin/products/new 200 in 1364ms
+ GET /api/auth/me 401 in 15ms
+ ✓ Compiled /api/admin/products in 412ms (1258 modules)
+prisma:query SELECT 1
+prisma:query INSERT INTO `main`.`Product` (`id`, `title`, `description`, `type`, `material`, `price_cents`, `discount_percent`, `moq`, `lead_time_days`, `sizes`, `colors`, `care_instructions`, `images`, `is_available`, `in_stock`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ POST /api/admin/products 201 in 524ms
+ ○ Compiling /admin/products ...
+ ✓ Compiled /admin/products in 1250ms (1287 modules)
+ GET /admin/products 200 in 1294ms
+ GET /admin/products 200 in 53ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10&search=QA+Temp+Product+1774607025112 200 in 29ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE 1=1 ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10 200 in 817ms
+ ○ Compiling /admin/products/[id] ...
+ ✓ Compiled /admin/products/[id] in 1379ms (1280 modules)
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE 1=1 ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10 200 in 1402ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE 1=1 ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10 200 in 792ms
+ GET /admin/products/cmn8r7cp10000quz4wc4jqjyh 200 in 2994ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8r7cp10000quz4wc4jqjyh 200 in 19ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8r7cp10000quz4wc4jqjyh 200 in 14ms
+prisma:query UPDATE `main`.`Product` SET `title` = ?, `description` = ?, `type` = ?, `material` = ?, `price_cents` = ?, `moq` = ?, `lead_time_days` = ?, `sizes` = ?, `colors` = ?, `care_instructions` = ?, `images` = ?, `is_available` = ?, `updated_at` = ? WHERE (`main`.`Product`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ PUT /api/admin/products 200 in 18ms
+ ✓ Compiled in 448ms (564 modules)
+ GET /admin/products 200 in 441ms
+ ✓ Compiled in 358ms (564 modules)
+ ✓ Compiled in 515ms (564 modules)
+ GET /products 200 in 267ms
+ GET /api/auth/me 401 in 544ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 1037ms
+ GET /cart 200 in 131ms
+ GET /api/auth/me 401 in 17ms
+ GET /login?redirect=%2Fcheckout 200 in 44ms
+ GET /products 200 in 139ms
+ GET /api/auth/me 401 in 28ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 911ms
+ GET /admin-login 200 in 112ms
+ GET /api/auth/me 401 in 14ms
+ POST /api/admin/auth/login 200 in 18ms
+ GET /admin 200 in 207ms
+ GET /admin/products/new 200 in 205ms
+ GET /api/auth/me 401 in 14ms
+prisma:query INSERT INTO `main`.`Product` (`id`, `title`, `description`, `type`, `material`, `price_cents`, `discount_percent`, `moq`, `lead_time_days`, `sizes`, `colors`, `care_instructions`, `images`, `is_available`, `in_stock`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ POST /api/admin/products 201 in 30ms
+ ✓ Compiled in 541ms (564 modules)
+ GET /admin/products 200 in 531ms
+ ✓ Compiled in 357ms (564 modules)
+ ✓ Compiled in 401ms (564 modules)
+ ✓ Compiled in 337ms (564 modules)
+ GET /products 200 in 142ms
+ GET /api/auth/me 401 in 21ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 744ms
+ GET /cart 200 in 135ms
+ GET /api/auth/me 401 in 14ms
+ GET /login?redirect=%2Fcheckout 200 in 37ms
+ GET /products 200 in 153ms
+ GET /api/auth/me 401 in 20ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 755ms
+ GET /admin-login 200 in 84ms
+ GET /api/auth/me 401 in 14ms
+ POST /api/admin/auth/login 200 in 14ms
+ GET /admin 200 in 219ms
+ GET /admin/products/new 200 in 167ms
+ GET /api/auth/me 401 in 17ms
+prisma:query INSERT INTO `main`.`Product` (`id`, `title`, `description`, `type`, `material`, `price_cents`, `discount_percent`, `moq`, `lead_time_days`, `sizes`, `colors`, `care_instructions`, `images`, `is_available`, `in_stock`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ POST /api/admin/products 201 in 28ms
+ ✓ Compiled in 566ms (564 modules)
+ GET /admin/products 200 in 545ms
+ ✓ Compiled in 414ms (564 modules)
+ ✓ Compiled in 3.4s (1223 modules)
+ ✓ Compiled in 612ms (564 modules)
+ GET /products 200 in 533ms
+ ○ Compiling /api/products ...
+ ✓ Compiled /api/products in 600ms (688 modules)
+ ✓ Compiled (690 modules)
+ GET /api/auth/me 401 in 1094ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 1895ms
+ GET /products 200 in 470ms
+ GET /api/auth/me 401 in 25ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 1152ms
+ GET /admin-login 200 in 119ms
+ GET /api/auth/me 401 in 14ms
+ ✓ Compiled /api/admin/auth/login in 423ms (692 modules)
+ POST /api/admin/auth/login 200 in 522ms
+ ○ Compiling /admin ...
+ ✓ Compiled /admin in 704ms (709 modules)
+ GET /admin 200 in 1118ms
+ GET /api/auth/me 200 in 12ms
+ GET /admin/products/new 200 in 260ms
+ GET /api/auth/me 401 in 81ms
+ ✓ Compiled /api/admin/products in 364ms (712 modules)
+prisma:query INSERT INTO `main`.`Product` (`id`, `title`, `description`, `type`, `material`, `price_cents`, `discount_percent`, `moq`, `lead_time_days`, `sizes`, `colors`, `care_instructions`, `images`, `is_available`, `in_stock`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ POST /api/admin/products 201 in 466ms
+ GET /admin/products/new 200 in 730ms
+ ✓ Compiled in 974ms (564 modules)
+ GET /admin/products 200 in 1323ms
+ ✓ Compiled in 495ms (564 modules)
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/auth/me 401 in 43ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10&search=QA+Temp+Product+1774607624780 200 in 20ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE 1=1 ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10 200 in 673ms
+ GET /admin/products/cmn8rk7ce0003quz4k0fnkhmk 200 in 50ms
+prisma:query SELECT 1
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8rk7ce0003quz4k0fnkhmk 200 in 14ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8rk7ce0003quz4k0fnkhmk 200 in 13ms
+prisma:query UPDATE `main`.`Product` SET `title` = ?, `description` = ?, `type` = ?, `material` = ?, `price_cents` = ?, `discount_percent` = ?, `moq` = ?, `lead_time_days` = ?, `sizes` = ?, `colors` = ?, `care_instructions` = ?, `images` = ?, `is_available` = ?, `in_stock` = ?, `updated_at` = ? WHERE (`main`.`Product`.`id` = ? AND 1=1) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ PUT /api/admin/products 200 in 21ms
+ ✓ Compiled in 607ms (564 modules)
+ GET /admin/products 200 in 918ms
+ ✓ Compiled in 430ms (564 modules)
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE 1=1 LIMIT ? OFFSET ?) AS `sub`
+ GET /api/auth/me 401 in 29ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`title` LIKE ? OR `main`.`Product`.`description` LIKE ? OR `main`.`Product`.`sku` LIKE ?) ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10&search=QA+Temp+Product+1774607624780 200 in 19ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE 1=1 ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+ GET /api/admin/products?page=1&limit=10 200 in 640ms
+ GET /admin/products/cmn8rk7ce0003quz4k0fnkhmk 200 in 46ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8rk7ce0003quz4k0fnkhmk 200 in 15ms
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE (`main`.`Product`.`id` = ? AND 1=1) LIMIT ? OFFSET ?
+ GET /api/admin/products?id=cmn8rk7ce0003quz4k0fnkhmk 200 in 15ms
+ ✓ Compiled in 511ms (564 modules)
+ GET /products 200 in 214ms
+ GET /api/auth/me 401 in 30ms
+prisma:query SELECT 1
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 955ms
+ GET /products 200 in 122ms
+ GET /api/auth/me 401 in 14ms
+prisma:query SELECT COUNT(*) FROM (SELECT `main`.`Product`.`id` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?) AS `sub`
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`title`, `main`.`Product`.`description`, `main`.`Product`.`type`, `main`.`Product`.`material`, `main`.`Product`.`price_cents`, `main`.`Product`.`discount_percent`, `main`.`Product`.`moq`, `main`.`Product`.`lead_time_days`, `main`.`Product`.`sizes`, `main`.`Product`.`colors`, `main`.`Product`.`care_instructions`, `main`.`Product`.`images`, `main`.`Product`.`is_available`, `main`.`Product`.`in_stock`, `main`.`Product`.`sku`, `main`.`Product`.`created_at`, `main`.`Product`.`updated_at` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? ORDER BY `main`.`Product`.`created_at` DESC LIMIT ? OFFSET ?
+prisma:query SELECT `main`.`Product`.`id`, `main`.`Product`.`price_cents`, `main`.`Product`.`colors`, `main`.`Product`.`material`, `main`.`Product`.`type` FROM `main`.`Product` WHERE `main`.`Product`.`is_available` = ? LIMIT ? OFFSET ?
+ GET /api/products 200 in 878ms
+ GET /admin-login 200 in 83ms
+ GET /api/auth/me 401 in 15ms
+ POST /api/admin/auth/login 200 in 20ms
+ GET /admin 200 in 186ms
+ GET /admin/products/new 200 in 181ms
+ GET /api/auth/me 401 in 15ms
+prisma:query INSERT INTO `main`.`Product` (`id`, `title`, `description`, `type`, `material`, `price_cents`, `discount_percent`, `moq`, `lead_time_days`, `sizes`, `colors`, `care_instructions`, `images`, `is_available`, `in_stock`, `created_at`, `updated_at`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?) RETURNING `id` AS `id`, `title` AS `title`, `description` AS `description`, `type` AS `type`, `material` AS `material`, `price_cents` AS `price_cents`, `discount_percent` AS `discount_percent`, `moq` AS `moq`, `lead_time_days` AS `lead_time_days`, `sizes` AS `sizes`, `colors` AS `colors`, `care_instructions` AS `care_instructions`, `images` AS `images`, `is_available` AS `is_available`, `in_stock` AS `in_stock`, `sku` AS `sku`, `created_at` AS `created_at`, `updated_at` AS `updated_at`
+ POST /api/admin/products 201 in 19ms
+ ✓ Compiled in 723ms (564 modules)
+ GET /admin/products 200 in 1058ms
+ ✓ Compiled in 486ms (564 modules)
+ ✓ Compiled in 727ms (564 modules)
+ ✓ Compiled in 532ms (564 modules)
+ ✓ Compiled in 467ms (564 modules)
+ ✓ Compiled in 432ms (564 modules)
+ ✓ Compiled in 778ms (564 modules)
+ ✓ Compiled in 660ms (564 modules)
+ ✓ Compiled in 1108ms (564 modules)
+ ✓ Compiled in 651ms (564 modules)
+ ✓ Compiled in 483ms (564 modules)
+ ✓ Compiled in 446ms (564 modules)
+ ✓ Compiled in 1003ms (564 modules)
+ ✓ Compiled in 627ms (564 modules)
+ ✓ Compiled in 3.9s (1223 modules)
+ ✓ Compiled in 671ms (564 modules)
+ ✓ Compiled in 640ms (564 modules)
+ ✓ Compiled in 689ms (564 modules)
+ ✓ Compiled in 473ms (564 modules)
+ ✓ Compiled in 449ms (564 modules)
+ ✓ Compiled in 1630ms (564 modules)
+ ✓ Compiled in 656ms (564 modules)
+ ✓ Compiled in 575ms (564 modules)
+ ✓ Compiled in 3.2s (1223 modules)
+ ✓ Compiled in 3.2s (1223 modules)
+ ✓ Compiled in 1448ms (564 modules)
+ ✓ Compiled in 900ms (564 modules)
+ ✓ Compiled in 670ms (564 modules)
+ ✓ Compiled in 661ms (564 modules)
+ ✓ Compiled in 982ms (564 modules)
+ ✓ Compiled in 984ms (564 modules)

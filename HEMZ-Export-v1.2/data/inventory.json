@@ -1,0 +1,34 @@
+[
+  {
+    "id": "1",
+    "sku": "CSH-001-S",
+    "productId": "CSH-001",
+    "name": "Kashmiri Cashmere Shawl - Small",
+    "variant": "70x200 cm / Ivory",
+    "warehouse": "Main",
+    "onHand": 120,
+    "reserved": 5,
+    "onOrder": 50,
+    "reorderPoint": 20,
+    "cost": 8.5,
+    "price": 95.0,
+    "lastRestock": "2026-01-10",
+    "status": "In stock"
+  },
+  {
+    "id": "2",
+    "sku": "PSH-002-M",
+    "productId": "PSH-002",
+    "name": "Pure Pashmina Shawl - Medium",
+    "variant": "70x200 cm / Burgundy",
+    "warehouse": "Main",
+    "onHand": 40,
+    "reserved": 2,
+    "onOrder": 0,
+    "reorderPoint": 30,
+    "cost": 10.0,
+    "price": 120.0,
+    "lastRestock": "2025-12-20",
+    "status": "Low"
+  }
+]

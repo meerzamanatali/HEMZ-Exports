@@ -1,0 +1,70 @@
+{
+  "products": [
+    {
+      "id": "CSH-001",
+      "title": "Kashmiri Cashmere Shawl - Ivory",
+      "type": "Shawl",
+      "material": "100% Pure Cashmere",
+      "sizes": ["70x200 cm"],
+      "color": ["Ivory"],
+      "price": 95.0,
+      "currency": "USD",
+      "availability": "InStock",
+      "discount": 10,
+      "photos": [
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600"
+      ],
+      "description": "Hand-woven Kashmiri cashmere shawl with fine pashmina weave. Lightweight yet warm, perfect for export.",
+      "care_instructions": "Dry clean only. Store in breathable bag.",
+      "moq": 50,
+      "lead_time_days": 21
+    },
+    {
+      "id": "PSH-002",
+      "title": "Pure Pashmina Shawl - Burgundy",
+      "type": "Pashmina",
+      "material": "100% Pure Pashmina",
+      "sizes": ["70x200 cm"],
+      "color": ["Burgundy"],
+      "price": 120.0,
+      "currency": "USD",
+      "availability": "InStock",
+      "discount": 0,
+      "photos": [
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600"
+      ],
+      "description": "Ultra-fine pashmina from Changthangi goats. Exceptionally soft with natural warmth retention.",
+      "care_instructions": "Hand wash in cold water with mild detergent. Lay flat to dry.",
+      "moq": 25,
+      "lead_time_days": 28
+    },
+    {
+      "id": "SCF-003",
+      "title": "Embroidered Cashmere Scarf - Navy",
+      "type": "Scarf",
+      "material": "100% Cashmere with Silk Embroidery",
+      "sizes": ["30x180 cm"],
+      "color": ["Navy", "Gold"],
+      "price": 75.0,
+      "currency": "USD",
+      "availability": "InStock",
+      "discount": 15,
+      "photos": [
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600",
+        "/placeholder.svg?height=600&width=600"
+      ],
+      "description": "Luxurious cashmere scarf with traditional Kashmiri embroidery in gold silk thread.",
+      "care_instructions": "Dry clean recommended. Handle embroidery with care.",
+      "moq": 100,
+      "lead_time_days": 35
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "quotes": [
+    {
+      "id": "q_1769700466998",
+      "quote_number": "Q-0002",
+      "fullName": "nkcskc",
+      "company": "nkcskbc",
+      "country": "Germany",
+      "email": "zamanatmir@gmail.com",
+      "phone": "+919284319583",
+      "productInterest": "SCF-003",
+      "quantity": "50",
+      "preferredDelivery": "April",
+      "message": "llslcnlsc",
+      "source": "formspree",
+      "status": "new",
+      "created_at": "2026-01-29T15:27:46.998Z"
+    },
+    {
+      "id": "q_0001",
+      "quote_number": "Q-0001",
+      "fullName": "Test User",
+      "company": "Acme Co",
+      "country": "USA",
+      "email": "test@example.com",
+      "phone": "+1 555 0000",
+      "productInterest": "general",
+      "quantity": "100",
+      "preferredDelivery": "March 2026",
+      "message": "Test quote request stored for admin view.",
+      "status": "new",
+      "created_at": "2026-01-29T00:00:00.000Z"
+    }
+  ]
+}

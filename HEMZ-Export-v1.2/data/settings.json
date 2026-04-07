@@ -1,0 +1,81 @@
+{
+  "store": {
+    "name": "Luxury Textiles Export",
+    "description": "Premium cashmere and pashmina exports",
+    "logo_url": "/logo.png",
+    "currency": "USD",
+    "timezone": "UTC",
+    "support_email": "hemzexport@gmail.com"
+  },
+  "payment": {
+    "stripe_enabled": true,
+    "stripe_publishable_key": "pk_live_...",
+    "paypal_enabled": true,
+    "paypal_client_id": "...",
+    "bank_transfer_enabled": true,
+    "bank_details": {
+      "account_name": "Luxury Textiles",
+      "account_number": "****1234",
+      "bank_name": "International Bank",
+      "swift_code": "SWIFT123"
+    }
+  },
+  "shipping": {
+    "zones": [
+      {
+        "id": "zone_1",
+        "name": "North America",
+        "countries": ["USA", "Canada"],
+        "base_rate": 25,
+        "currency": "USD",
+        "delivery_days": "7-14"
+      },
+      {
+        "id": "zone_2",
+        "name": "Europe",
+        "countries": ["Germany", "UK", "France"],
+        "base_rate": 30,
+        "currency": "EUR",
+        "delivery_days": "10-21"
+      }
+    ]
+  },
+  "email": {
+    "from_name": "Luxury Textiles",
+    "from_email": "noreply@luxurytextiles.com",
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "templates": {
+      "order_confirmation": {
+        "subject": "Order Confirmation #{order_id}",
+        "enabled": true
+      },
+      "shipping_notification": {
+        "subject": "Your order has shipped",
+        "enabled": true
+      },
+      "quote_response": {
+        "subject": "Your Quote from Luxury Textiles",
+        "enabled": true
+      }
+    }
+  },
+  "tax": {
+    "tax_enabled": true,
+    "default_rate": 10,
+    "regions": [
+      {
+        "id": "tax_us",
+        "region": "USA",
+        "rate": 8.5,
+        "type": "sales_tax"
+      },
+      {
+        "id": "tax_eu",
+        "region": "EU",
+        "rate": 19,
+        "type": "vat"
+      }
+    ]
+  }
+}

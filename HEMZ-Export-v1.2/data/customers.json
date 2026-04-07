@@ -1,0 +1,37 @@
+{
+  "customers": [
+    {
+      "id": "CUST-001",
+      "name": "John Doe",
+      "email": "john@example.com",
+      "phone": "+1 555-111-2222",
+      "orders_count": 5,
+      "total_spent": 1299.5,
+      "address": "123 Main St, Springfield",
+      "joined_at": "2023-06-12",
+      "status": "active"
+    },
+    {
+      "id": "CUST-002",
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "phone": "+1 555-333-4444",
+      "orders_count": 2,
+      "total_spent": 459.99,
+      "address": "45 Market St, Metropolis",
+      "joined_at": "2024-01-08",
+      "status": "active"
+    },
+    {
+      "id": "CUST-003",
+      "name": "Aisha Khan",
+      "email": "aisha@domain.com",
+      "phone": "+92 300-1234567",
+      "orders_count": 0,
+      "total_spent": 0,
+      "address": "Lahore, Pakistan",
+      "joined_at": "2024-02-20",
+      "status": "inactive"
+    }
+  ]
+}
