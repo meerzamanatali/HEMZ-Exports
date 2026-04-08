@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Link from "next/link"
 import Image from "next/image"
@@ -14,7 +14,7 @@ import { Footer } from "@/components/footer"
 import { Eye, EyeOff, Loader2, Mail, Lock, AlertCircle, UserPlus } from "lucide-react"
 import { useToast } from "@/hooks/use-toast"
 
-export default function LoginPage() {
+function LoginContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const redirectTo = searchParams.get("redirect") || "/"
@@ -50,7 +50,7 @@ export default function LoginPage() {
     e.preventDefault()
 
     if (!validateForm()) return
-    
+
     setLoginError(null)
 
     const result = await login(formData.email, formData.password)
@@ -60,16 +60,13 @@ export default function LoginPage() {
         title: "Welcome back!",
         description: "You have successfully logged in.",
       })
-      // Use window.location for guaranteed redirect after login
       window.location.href = redirectTo
     } else {
-      // Set login error with code for specific handling
       setLoginError({
         message: result.error || "Invalid email or password",
         code: result.errorCode,
       })
-      
-      // Show toast for non-registration errors
+
       if (result.errorCode !== "EMAIL_NOT_FOUND") {
         toast({
           title: "Login failed",
@@ -83,11 +80,9 @@ export default function LoginPage() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
-    // Clear error when user starts typing
     if (errors[name]) {
       setErrors(prev => ({ ...prev, [name]: "" }))
     }
-    // Clear login error when user types
     if (loginError) {
       setLoginError(null)
     }
@@ -117,11 +112,10 @@ export default function LoginPage() {
 
           <form onSubmit={handleSubmit}>
             <CardContent className="space-y-4">
-              {/* Login Error Alert */}
               {loginError && (
                 <div className={`rounded-lg p-4 ${
-                  loginError.code === "EMAIL_NOT_FOUND" 
-                    ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800" 
+                  loginError.code === "EMAIL_NOT_FOUND"
+                    ? "bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800"
                     : "bg-destructive/10 border border-destructive/30"
                 }`}>
                   <div className="flex items-start gap-3">
@@ -132,24 +126,24 @@ export default function LoginPage() {
                     )}
                     <div className="flex-1">
                       <p className={`text-sm font-medium ${
-                        loginError.code === "EMAIL_NOT_FOUND" 
-                          ? "text-blue-800 dark:text-blue-200" 
+                        loginError.code === "EMAIL_NOT_FOUND"
+                          ? "text-blue-800 dark:text-blue-200"
                           : "text-destructive"
                       }`}>
                         {loginError.code === "EMAIL_NOT_FOUND" ? "Account Not Found" : "Login Failed"}
                       </p>
                       <p className={`text-sm mt-1 ${
-                        loginError.code === "EMAIL_NOT_FOUND" 
-                          ? "text-blue-700 dark:text-blue-300" 
+                        loginError.code === "EMAIL_NOT_FOUND"
+                          ? "text-blue-700 dark:text-blue-300"
                           : "text-destructive/80"
                       }`}>
                         {loginError.message}
                       </p>
                       {loginError.code === "EMAIL_NOT_FOUND" && (
-                        <Button 
+                        <Button
                           type="button"
-                          variant="outline" 
-                          size="sm" 
+                          variant="outline"
+                          size="sm"
                           className="mt-3 border-blue-300 text-blue-700 hover:bg-blue-100 dark:border-blue-700 dark:text-blue-300 dark:hover:bg-blue-900/50"
                           onClick={() => router.push(`/register${redirectTo !== "/" ? `?redirect=${encodeURIComponent(redirectTo)}` : ""}`)}
                         >
@@ -158,7 +152,7 @@ export default function LoginPage() {
                         </Button>
                       )}
                       {loginError.code === "WRONG_PASSWORD" && (
-                        <Link 
+                        <Link
                           href="/forgot-password"
                           className="inline-block mt-2 text-sm text-primary hover:underline"
                         >
@@ -194,10 +188,7 @@ export default function LoginPage() {
               <div className="space-y-2">
                 <div className="flex items-center justify-between">
                   <Label htmlFor="password">Password</Label>
-                  <Link
-                    href="/forgot-password"
-                    className="text-sm text-primary hover:underline"
-                  >
+                  <Link href="/forgot-password" className="text-sm text-primary hover:underline">
                     Forgot password?
                   </Link>
                 </div>
@@ -239,12 +230,7 @@ export default function LoginPage() {
             </CardContent>
 
             <CardFooter className="flex flex-col space-y-4">
-              <Button
-                type="submit"
-                className="w-full"
-                size="lg"
-                disabled={isLoading}
-              >
+              <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
                 {isLoading ? (
                   <>
                     <Loader2 className="mr-2 h-4 w-4 animate-spin" />
@@ -270,5 +256,21 @@ export default function LoginPage() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function LoginPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </main>
+        <Footer />
+      </div>
+    }>
+      <LoginContent />
+    </Suspense>
   )
 }
