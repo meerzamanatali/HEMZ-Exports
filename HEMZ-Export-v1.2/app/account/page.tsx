@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import Image from "next/image"
 import Link from "next/link"
@@ -86,7 +86,8 @@ const orderBadgeClasses: Record<string, string> = {
   cancel_requested: "bg-amber-100 text-amber-800",
 }
 
-export default function AccountPage() {
+// ✅ Inner component that uses useSearchParams
+function AccountContent() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const { user, isLoading, isAuthenticated, updateProfile, changePassword, logout } = useAuth()
@@ -123,14 +124,12 @@ export default function AccountPage() {
   const [cancelReason, setCancelReason] = useState("")
   const [cancelDetails, setCancelDetails] = useState("")
 
-  // Redirect if not authenticated
   useEffect(() => {
     if (!isLoading && !isAuthenticated) {
       router.push("/login?redirect=/account")
     }
   }, [isLoading, isAuthenticated, router])
 
-  // Populate form with user data
   useEffect(() => {
     if (user) {
       setProfileData({
@@ -333,7 +332,7 @@ export default function AccountPage() {
   }
 
   if (!user) {
-    return null // Will redirect via useEffect
+    return null
   }
 
   return (
@@ -341,7 +340,6 @@ export default function AccountPage() {
       <Header />
       <main className="flex-1 container mx-auto px-4 py-8">
         <div className="max-w-4xl mx-auto">
-          {/* Header */}
           <div className="flex items-center justify-between mb-8">
             <div>
               <h1 className="text-3xl font-serif font-bold">My Account</h1>
@@ -355,7 +353,6 @@ export default function AccountPage() {
             </Button>
           </div>
 
-          {/* Quick Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
             <Card>
               <CardContent className="flex items-center gap-4 p-6">
@@ -394,7 +391,6 @@ export default function AccountPage() {
             </Card>
           </div>
 
-          {/* Tabs */}
           <Tabs defaultValue={defaultTab} className="space-y-6">
             <TabsList className="grid w-full grid-cols-5 lg:w-auto lg:inline-grid">
               <TabsTrigger value="profile" className="gap-2">
@@ -424,7 +420,6 @@ export default function AccountPage() {
               </TabsTrigger>
             </TabsList>
 
-            {/* Profile Tab */}
             <TabsContent value="profile">
               <Card>
                 <CardHeader>
@@ -648,7 +643,6 @@ export default function AccountPage() {
               </Card>
             </TabsContent>
 
-            {/* Address Tab */}
             <TabsContent value="address">
               <Card>
                 <CardHeader>
@@ -733,7 +727,6 @@ export default function AccountPage() {
               </Card>
             </TabsContent>
 
-            {/* Security Tab */}
             <TabsContent value="security">
               <Card>
                 <CardHeader>
@@ -866,7 +859,6 @@ export default function AccountPage() {
               </Card>
             </TabsContent>
 
-            {/* Wishlist Tab */}
             <TabsContent value="wishlist">
               <Card>
                 <CardHeader className="flex flex-row items-start justify-between">
@@ -880,8 +872,8 @@ export default function AccountPage() {
                       Products you&apos;ve saved for later. Move them to cart when you&apos;re ready to purchase.
                     </CardDescription>
                   </div>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="sm"
                     onClick={() => {
                       refreshWishlist()
@@ -916,7 +908,6 @@ export default function AccountPage() {
                           key={item.id}
                           className="flex items-center gap-4 p-4 border rounded-lg hover:bg-muted/50 transition-colors"
                         >
-                          {/* Product Image */}
                           <Link href={`/products/${item.id}`} className="shrink-0">
                             <div className="relative w-20 h-20 rounded-md overflow-hidden bg-muted">
                               <Image
@@ -927,8 +918,6 @@ export default function AccountPage() {
                               />
                             </div>
                           </Link>
-
-                          {/* Product Info */}
                           <div className="flex-1 min-w-0">
                             <Link href={`/products/${item.id}`} className="hover:underline">
                               <h4 className="font-medium truncate">{item.title}</h4>
@@ -950,12 +939,10 @@ export default function AccountPage() {
                             </p>
                           </div>
 
-                          {/* Actions */}
                           <div className="flex items-center gap-2 shrink-0">
                             <Button
                               size="sm"
                               onClick={() => {
-                                // Add to cart - convert dollars to cents
                                 addToCart({
                                   variant_id: item.selected_variant_id || item.id,
                                   price_cents: Math.round(item.price * 100),
@@ -968,7 +955,6 @@ export default function AccountPage() {
                                     material: item.material,
                                   },
                                 })
-                                // Remove from wishlist
                                 removeFromWishlist(item.id)
                                 toast({
                                   title: "Moved to cart",
@@ -994,11 +980,7 @@ export default function AccountPage() {
                             >
                               <Trash2 className="h-4 w-4" />
                             </Button>
-                            <Button
-                              size="sm"
-                              variant="ghost"
-                              asChild
-                            >
+                            <Button size="sm" variant="ghost" asChild>
                               <Link href={`/products/${item.id}`}>
                                 <ExternalLink className="h-4 w-4" />
                               </Link>
@@ -1007,7 +989,6 @@ export default function AccountPage() {
                         </div>
                       ))}
 
-                      {/* Summary */}
                       <Separator className="my-4" />
                       <div className="flex items-center justify-between">
                         <p className="text-sm text-muted-foreground">
@@ -1016,7 +997,6 @@ export default function AccountPage() {
                         <Button
                           variant="outline"
                           onClick={() => {
-                            // Move all items to cart - convert dollars to cents
                             wishlistItems.forEach((item) => {
                               addToCart({
                                 variant_id: item.selected_variant_id || item.id,
@@ -1053,5 +1033,21 @@ export default function AccountPage() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function AccountPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </main>
+        <Footer />
+      </div>
+    }>
+      <AccountContent />
+    </Suspense>
   )
 }
