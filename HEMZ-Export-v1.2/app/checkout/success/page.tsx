@@ -1,8 +1,8 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, Suspense } from "react"
 import { useSearchParams } from "next/navigation"
-import { CheckCircle, Package, Mail, ArrowRight } from "lucide-react"
+import { CheckCircle, Package, Mail, ArrowRight, Loader2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import Link from "next/link"
@@ -10,7 +10,8 @@ import { Header } from "@/components/header"
 import { Footer } from "@/components/footer"
 import { formatPrice } from "@/lib/utils"
 
-export default function CheckoutSuccessPage() {
+// ✅ Inner component that uses useSearchParams
+function CheckoutSuccessContent() {
   const searchParams = useSearchParams()
   const orderId = searchParams.get("order_id")
   const [order, setOrder] = useState<any>(null)
@@ -138,5 +139,21 @@ export default function CheckoutSuccessPage() {
       </main>
       <Footer />
     </div>
+  )
+}
+
+export default function CheckoutSuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col min-h-screen">
+        <Header />
+        <main className="flex-1 flex items-center justify-center">
+          <Loader2 className="h-8 w-8 animate-spin text-primary" />
+        </main>
+        <Footer />
+      </div>
+    }>
+      <CheckoutSuccessContent />
+    </Suspense>
   )
 }
