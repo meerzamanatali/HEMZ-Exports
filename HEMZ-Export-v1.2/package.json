@@ -58,7 +58,6 @@
     "node-notifier": "latest",
     "nodemailer": "latest",
     "pg": "latest",
-    "pg-native": "latest",
     "react": "^19",
     "react-day-picker": "9.8.0",
     "react-dom": "^19",
