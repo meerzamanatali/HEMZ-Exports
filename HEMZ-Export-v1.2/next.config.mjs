@@ -10,11 +10,6 @@ const nextConfig = {
   serverExternalPackages: ['@prisma/client', 'prisma'],
   outputFileTracingExcludes: {
     '*': [
-      'node_modules/@prisma/engines/**',
-      'node_modules/@prisma/client/node_modules/**',
-      'node_modules/.prisma/client/libquery_engine*',
-      'node_modules/prisma/libquery_engine*',
-      'node_modules/prisma/build/**',
       'public/uploads/**',
     ],
   },
