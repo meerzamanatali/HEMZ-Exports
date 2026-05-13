@@ -7,7 +7,13 @@ const nextConfig = {
     unoptimized: true,
   },
   turbopack: {},
-  serverExternalPackages: ['pg-native'],
+  serverExternalPackages: ['@prisma/client', 'prisma'],
+  outputFileTracingExcludes: {
+    '*': [
+      'node_modules/@prisma/engines/**',
+      'node_modules/prisma/build/**',
+    ],
+  },
 }
 
 export default nextConfig
